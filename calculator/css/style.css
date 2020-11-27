@@ -1,4 +1,32 @@
-h1{
-  text-align: center;
+body{
+  background: #FDB833;
+  color: #333333;
+}
+
+#calc{
+  width: 500px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+}
+#calc-output{
+  margin-bottom: 10px;
+}
+#calc-output #calc-output-box{
+  height: 50px;
   width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: block;
+  border-radius: 5px;
+  color: #FFF;
+}
+#calc-buttons .col{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.btn.dark{
+  background: rgba(0, 0, 0, 0.6);
+  color: #FFF;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
