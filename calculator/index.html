@@ -18,28 +18,30 @@
     <div class="container-fluid p-4">
       <div class="row">
         <div class="col-12" id="calc-output">
-          <span id="calc-output-box" class="text-right py-2 px-3 d-flex align-items-center justify-content-end"></span>
+          <span id="calc-output-box" class="text-right py-2 px-3 d-flex align-items-end justify-content-center flex-column">
+            <small class="full"></small>
+            <span class="actual"></span>
+          </span>
         </div>
         <div class="col-12" id="calc-buttons">
-
           <div class="row">
             <div class="col col-3">
-              <button class="btn dark" data-value="reset">
+              <button class="btn dark" data-clear="true">
                 AC
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="+/-">
-                +/-
+              <button class="btn dark" data-del="true">
+                DEL
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="%">
+              <button class="btn dark" data-operator="%">
                 %
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="÷">
+              <button class="btn dark" data-operator="/">
                 ÷
               </button>
             </div>
@@ -47,22 +49,22 @@
 
           <div class="row">
             <div class="col col-3">
-              <button class="btn dark" data-value="7">
+              <button class="btn dark" data-number="7">
                 7
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="8">
+              <button class="btn dark" data-number="8">
                 8
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="9">
+              <button class="btn dark" data-number="9">
                 9
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="x">
+              <button class="btn dark" data-operator="*">
                 x
               </button>
             </div>
@@ -70,22 +72,22 @@
 
           <div class="row">
             <div class="col col-3">
-              <button class="btn dark" data-value="4">
+              <button class="btn dark" data-number="4">
                 4
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="5">
+              <button class="btn dark" data-number="5">
                 5
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="6">
+              <button class="btn dark" data-number="6">
                 6
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="-">
+              <button class="btn dark" data-operator="-">
                 -
               </button>
             </div>
@@ -93,22 +95,22 @@
 
           <div class="row">
             <div class="col col-3">
-              <button class="btn dark" data-value="1">
+              <button class="btn dark" data-number="1">
                 1
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="2">
+              <button class="btn dark" data-number="2">
                 2
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="3">
+              <button class="btn dark" data-number="3">
                 3
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="+">
+              <button class="btn dark" data-operator="+">
                 +
               </button>
             </div>
@@ -116,25 +118,22 @@
 
           <div class="row">
             <div class="col col-6">
-              <button class="btn dark" data-value="0">
+              <button class="btn dark" data-number="0">
                 0
               </button>
             </div>
 
             <div class="col col-3">
-              <button class="btn dark" data-value=".">
+              <button class="btn dark" data-number=".">
                 .
               </button>
             </div>
             <div class="col col-3">
-              <button class="btn dark" data-value="result">
+              <button class="btn dark" data-result="true">
                 =
               </button>
             </div>
           </div>
-
-
-
 
         </div>
       </div>

@@ -12,12 +12,20 @@ body{
   margin-bottom: 10px;
 }
 #calc-output #calc-output-box{
-  height: 50px;
+  height: 100px;
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
   display: block;
   border-radius: 5px;
   color: #FFF;
+}
+#calc-output #calc-output-box .actual{
+  font-weight: bold;
+  font-size: 1.5rem;
+  min-height: 36px;
+}
+#calc-output #calc-output-box .full{
+  min-height: 20px;
 }
 #calc-buttons .col{
   padding-top: 10px;

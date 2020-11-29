@@ -1,48 +1,55 @@
 (function () {
     'use strict';
     /* GET ALL BUTTONS */
-    var output = document.getElementById('calc-output-box');
-    var equal = document.querySelector('button.btn[data-value="="]');
-    var reset = document.querySelector('button.btn[data-value="reset"]');
-    var symbols = {
-        dot: document.querySelector('button.btn[data-value="."]'),
-        add: document.querySelector('button.btn[data-value="+"]'),
-        remove: document.querySelector('button.btn[data-value="-"]'),
-        divide: document.querySelector('button.btn[data-value="÷"]'),
-        invert: document.querySelector('button.btn[data-value="+/-"]'),
-        multiply: document.querySelector('button.btn[data-value="x"]'),
-        percentage: document.querySelector('button.btn[data-value="%"]')
-    };
-    var numbers = {
-        one: document.querySelector('button.btn[data-value="1"]'),
-        two: document.querySelector('button.btn[data-value="2"]'),
-        three: document.querySelector('button.btn[data-value="3"]'),
-        fourth: document.querySelector('button.btn[data-value="4"]'),
-        five: document.querySelector('button.btn[data-value="5"]'),
-        six: document.querySelector('button.btn[data-value="6"]'),
-        seven: document.querySelector('button.btn[data-value="7"]'),
-        eight: document.querySelector('button.btn[data-value="8"]'),
-        nine: document.querySelector('button.btn[data-value="9"]'),
-        zero: document.querySelector('button.btn[data-value="0"]')
-    };
-    /* SET ALL EVENTS */
-    Object.keys(numbers).forEach(function (key, value) {
-        document.querySelector("button.btn[data-value=\"" + value + "\"]").addEventListener('click', function () {
-            writeNumberInOutput(value.toString());
+    var output_actual = document.getElementById('calc-output-box').querySelector('.actual');
+    var output_full = document.getElementById('calc-output-box').querySelector('.full');
+    var result = document.querySelector('[data-result="true"]');
+    var clear = document.querySelector('[data-clear="true"]');
+    var del = document.querySelector('[data-del="true"]');
+    var numbers = document.querySelectorAll('[data-number]');
+    var operators = document.querySelectorAll('[data-operator]');
+    clear.addEventListener('click', function () {
+        ClearOutput();
+        console.log('CLEAR');
+    });
+    /* SET EVENT LISTENERS */
+    del.addEventListener('click', function () {
+        DelNumberInOutputActual();
+        console.log('DEL');
+    });
+    result.addEventListener('click', function () {
+        console.log('RESULT');
+    });
+    numbers.forEach(function (item) {
+        item.addEventListener("click", function () {
+            var value = this.getAttribute("data-number");
+            writeNumberInOutputActual(value);
+            console.log(value);
         });
     });
-    reset.addEventListener('click', function () {
-        clearOutput();
+    operators.forEach(function (item) {
+        item.addEventListener("click", function () {
+            var value = this.getAttribute("data-operator");
+            console.log(value);
+        });
     });
-    /* DEFINE ALL FUNCTIONS */
-    var writeInOperation = function (p1) {
-    };
-    var writeNumberInOutput = function (p1) {
-        var content = output.textContent;
-        output.textContent = content + p1;
+    /* CREATE FUNCTIONS */
+    function writeNumberInOutputActual(p1) {
+        var content = output_actual.textContent;
+        output_actual.textContent = content + p1;
         return;
-    };
-    var clearOutput = function () {
-        output.textContent = '';
-    };
+    }
+    ;
+    function DelNumberInOutputActual() {
+        var content = output_actual.textContent.slice(0, -1);
+        output_actual.textContent = content;
+        return;
+    }
+    ;
+    function ClearOutput() {
+        output_actual.textContent = '';
+        output_full.textContent = '';
+        return;
+    }
+    ;
 })();
